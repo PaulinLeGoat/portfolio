@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Paulin KUHN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header avec contact -->
+    <header id="header">
+        <div class="container">
+            <div class="contact-info">
+                <a href="mailto:paulin.kuhn@etu.univ-lyon1.fr">paulin.kuhn@etu.univ-lyon1.fr</a>
+                <a href="tel:+33771795029">+33 7 71 79 50 29</a>
+                <a href="https://www.linkedin.com/in/paulin-kuhn-278119295/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Paulin KUHN</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Section À propos -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <h1>Étudiant en BUT Informatique</h1>
+                <h2 class="subtitle">Alternance - Réseaux & Sécurité</h2>
+                <p class="intro">
+                    Je suis <strong>Paulin KUHN</strong>, étudiant en Informatique plus précisément en BUT informatique. Avec un fort intérêt pour l'informatique depuis le collège, je me spécialise actuellement dans le domaine du <strong>Réseau et de la Sécurité</strong>. 
+                    <br><br>
+                    Je suis actuellement le parcours <strong>DACS (Déploiement d'Applications Communicantes et Sécurisées)</strong> en alternance. Je travaille pour le <strong>Groupe La Poste</strong> en tant que Conseiller Support dans la maintenance informatique à distance (support de niveau 2).
+                    <br><br>
+                    N'hésitez pas à parcourir mes projets et à me contacter pour en discuter !
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight">
+                        <h3>Formation</h3>
+                        <p>BUT Informatique - DACS</p>
+                    </div>
+                    <div class="highlight">
+                        <h3>Spécialisation</h3>
+                        <p>Réseaux, Système & Sécurité</p>
+                    </div>
+                    <div class="highlight">
+                        <h3>Alternance</h3>
+                        <p>Groupe La Poste</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="projects-grid" id="projects-container">
+                <!-- Les projets seront ajoutés ici via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour les projets -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Contenu du projet affiché ici -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Expérience Professionnelle -->
+    <section id="experiences">
+        <div class="container">
+            <h2 class="section-title">Expérience Professionnelle</h2>
+            <div class="experience-grid" id="experiences-container">
+                <!-- Les expériences seront ajoutées ici via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour l'expérience -->
+    <div id="experience-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="experience-modal-body">
+                <!-- Contenu de l'expérience affiché ici -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Compétences -->
+    <section id="competences">
+        <div class="container">
+            <h2 class="section-title">Compétences Techniques</h2>
+            <p class="section-description"></p>
+            <div class="competences-grid" id="competences-container">
+                <!-- Les compétences seront ajoutées ici via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CV -->
+    <section id="cv">
+        <div class="container">
+            <h2 class="section-title">CV</h2>
+            <div class="cv-content">
+                <a href="cv.pdf" class="cv-download" target="_blank">
+                    Voir mon CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Contact -->
+    <footer id="contact">
+        <div class="container">
+            <h2>Me Contacter</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:paulin.kuhn@etu.univ-lyon1.fr">paulin.kuhn@etu.univ-lyon1.fr</a>
+                </div>
+                <div class="contact-item">
+                    <h3>Téléphone</h3>
+                    <a href="tel:+33771795029">+33 7 71 79 50 29</a>
+                </div>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/paulin-kuhn-278119295/" target="_blank">Mon profil LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
