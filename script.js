@@ -53,6 +53,31 @@ const projects = [
         tags: ["Docker Swarm", "Portainer", "Traefik", "WordPress", "Haute disponibilité", "Load balancer"]
     },
     {
+        id: "power-apps",
+        title: "Projet Power Apps Alternance",
+        context: "Optimisation du processus d'envoi des identifiants de connexion aux nouveaux collaborateurs suite à la création de leurs comptes dans l'Active Directory.",
+        description: `
+            <h3>Projet Power Apps Alternance</h3>
+            <p><strong>Contexte</strong> Optimisation du processus d'envoi des identifiants de connexion aux nouveaux collaborateurs suite à la création de leurs comptes dans l'Active Directory.</p>
+            
+            <h4>Description</h4>
+            <p>Dans le cadre de mon alternance, j'ai développé une application métier avec Microsoft Power Apps pour moderniser et sécuriser le processus d'envoi des mots de passe initiaux aux nouveaux utilisateurs. Cette solution remplace une version antérieure codée en Python, en apportant des améliorations significatives tant sur le plan fonctionnel que sécuritaire. Face aux contraintes du protocole de sécurité de l'entreprise, qui exige la transmission des identifiants par email séparé après création des comptes Active Directory, j'ai conçu une solution plus robuste et conviviale.</p>
+            <p>L'application génère automatiquement des mots de passe complexes conformes aux exigences de sécurité (combinaison de majuscules, minuscules, chiffres et caractères spéciaux), tout en intégrant un nouveau système de vérification qui valide l'existence des adresses email avant envoi, évitant ainsi les erreurs de transmission. L'interface utilisateur intuitive facilite la copie du mot de passe généré et l'envoi des informations en un seul clic. Un avantage majeur de cette nouvelle version sous Power Apps réside dans la gestion native des accès utilisateurs, permettant de contrôler précisément qui peut utiliser l'application via une simple attribution d'accès par email, fonctionnalité impossible avec la solution Python précédente. Cette refonte a considérablement réduit le temps consacré à cette tâche répétitive tout en renforçant la conformité avec les politiques de sécurité de l'entreprise.</p>
+                        
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC21.03 | Adopter de bonnes pratiques de conception et de programmation - Implémentation d'une structure modulaire facilitant la maintenance et les évolutions futures</li>
+                <li>AC31.02 | Faire évoluer une application existante - Modernisation d'une solution Python existante via une plateforme low-code avec ajout de fonctionnalités de vérification et de gestion des accès</li>
+                <li>AC26.04 | Rendre compte de son activité professionnelle - Implémentation et documentation d'une solution professionnelle répondant aux exigences spécifiques de sécurité et d'accessibilité de l'entreprise</li>
+                <li>AC15.01 | Appréhender les besoins du client et de l'utilisateur - Adaptation d'une solution aux besoins spécifiques du service et aux contraintes de sécurité de l'entreprise</li>
+                <li>AC26.03 | Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique - Collaboration avec un collègue</li>
+                <li>AC24.02 | Assurer la sécurité des données - Protection des informations confidentielles</li>
+                <li>AC33.01 | Créer des processus de traitement automatisé - Optimisation et automatisation de l’envoie de mail</li>
+            </ul>
+        `,
+        tags: ["Power Apps", "Sécurité", "Active Directory", "Automatisation", "Interface utilisateur", "Gestion des accès"]
+    },
+    {
         id: "chiffrement-s3",
         title: "Projet Chiffrement S3",
         context: "Solution sécurisée d'échange chiffré pour protéger des données sensibles lors de transmissions réseau prenant en compte l'échange de fichier.",
@@ -126,31 +151,6 @@ const projects = [
             </ul>
         `,
         tags: ["Power BI", "SQL", "PL/SQL", "Oracle", "Visualisation", "Analyse"]
-    },
-    {
-        id: "power-apps",
-        title: "Projet Power Apps Alternance",
-        context: "Optimisation du processus d'envoi des identifiants de connexion aux nouveaux collaborateurs suite à la création de leurs comptes dans l'Active Directory.",
-        description: `
-            <h3>Projet Power Apps Alternance</h3>
-            <p><strong>Contexte</strong> Optimisation du processus d'envoi des identifiants de connexion aux nouveaux collaborateurs suite à la création de leurs comptes dans l'Active Directory.</p>
-            
-            <h4>Description</h4>
-            <p>Dans le cadre de mon alternance, j'ai développé une application métier avec Microsoft Power Apps pour moderniser et sécuriser le processus d'envoi des mots de passe initiaux aux nouveaux utilisateurs. Cette solution remplace une version antérieure codée en Python, en apportant des améliorations significatives tant sur le plan fonctionnel que sécuritaire. Face aux contraintes du protocole de sécurité de l'entreprise, qui exige la transmission des identifiants par email séparé après création des comptes Active Directory, j'ai conçu une solution plus robuste et conviviale.</p>
-            <p>L'application génère automatiquement des mots de passe complexes conformes aux exigences de sécurité (combinaison de majuscules, minuscules, chiffres et caractères spéciaux), tout en intégrant un nouveau système de vérification qui valide l'existence des adresses email avant envoi, évitant ainsi les erreurs de transmission. L'interface utilisateur intuitive facilite la copie du mot de passe généré et l'envoi des informations en un seul clic. Un avantage majeur de cette nouvelle version sous Power Apps réside dans la gestion native des accès utilisateurs, permettant de contrôler précisément qui peut utiliser l'application via une simple attribution d'accès par email, fonctionnalité impossible avec la solution Python précédente. Cette refonte a considérablement réduit le temps consacré à cette tâche répétitive tout en renforçant la conformité avec les politiques de sécurité de l'entreprise.</p>
-                        
-            <h4>Compétences développées</h4>
-            <ul>
-                <li>AC21.03 | Adopter de bonnes pratiques de conception et de programmation - Implémentation d'une structure modulaire facilitant la maintenance et les évolutions futures</li>
-                <li>AC31.02 | Faire évoluer une application existante - Modernisation d'une solution Python existante via une plateforme low-code avec ajout de fonctionnalités de vérification et de gestion des accès</li>
-                <li>AC26.04 | Rendre compte de son activité professionnelle - Implémentation et documentation d'une solution professionnelle répondant aux exigences spécifiques de sécurité et d'accessibilité de l'entreprise</li>
-                <li>AC15.01 | Appréhender les besoins du client et de l'utilisateur - Adaptation d'une solution aux besoins spécifiques du service et aux contraintes de sécurité de l'entreprise</li>
-                <li>AC26.03 | Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique - Collaboration avec un collègue</li>
-                <li>AC24.02 | Assurer la sécurité des données - Protection des informations confidentielles</li>
-                <li>AC33.01 | Créer des processus de traitement automatisé - Optimisation et automatisation de l’envoie de mail</li>
-            </ul>
-        `,
-        tags: ["Power Apps", "Sécurité", "Active Directory", "Automatisation", "Interface utilisateur", "Gestion des accès"]
     },
     {
         id: "projet-reseau",
