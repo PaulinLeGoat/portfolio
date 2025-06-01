@@ -47,7 +47,7 @@ const projects = [
                 <li>AC24.02 | Assurer la sécurité des données - Mise en place de volumes persistants pour les bases de données</li>
                 <li>AC33.01 | Créer des processus de traitement automatisé - Déploiement de services via Portainer avec réplication</li>
                 <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Architecture de haute disponibilité avec Docker Swarm</li>
-                <li>AC33.03 | Appliquer une politique de sécurité au niveau de l'infrastructure - Isolation des services via des réseaux overlay dédiés</li>
+                <li>AC33.03 | Appliquer une politique de sécurité au niveau de l'infrastructure - Isolation des services via des réseaux complexe</li>
             </ul>
         `,
         tags: ["Docker Swarm", "Portainer", "Traefik", "WordPress", "Haute disponibilité", "Load balancer"]
@@ -234,7 +234,6 @@ const experiences = [
                 <li>AC13.04 | Configurer un poste de travail dans un réseau d'entreprise - Intégration des utilisateurs dans l'environnement Active Directory</li>
                 <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Connexions aux serveurs pour récupérer les groupes de sécurité</li>
                 <li>AC23.03 | Sécuriser les services et données d'un système - Application des politiques d'accès et de sécurité</li>
-                <li>AC33.03 | Appliquer une politique de sécurité au niveau de l'infrastructure - Mise en œuvre des politiques de sécurité dans la gestion des identités</li>
                 <li>AC15.03 | Identifier les acteurs et les différentes phases d'un cycle de développement - Compréhension du processus de validation des demandes</li>
                 <li>AC26.01 | Comprendre la diversité, la structure et la dimension de l’informatique dans une organisation - Compréhension de la structure et de l’écosystème complex de l’entreprise</li>
             </ul>
@@ -291,7 +290,6 @@ const experiences = [
                 <li>AC23.03 | Sécuriser les services et données d'un système - Application des protocoles de transmission sécurisée de données sensibles</li>
                 <li>AC24.02 | Assurer la sécurité des données - Manipulation sécurisée d'enregistrements vidéo confidentiels</li>
                 <li>AC26.04 | Rendre compte de son activité professionnelle - Documentation précise des interventions dans le registre partagé</li>
-                <li>AC33.03 | Appliquer une politique de sécurité au niveau de l'infrastructure - Mise en œuvre des procédures de sécurité pour l'extraction et le partage de vidéos</li>
             </ul>
         `,
         tags: ["Vidéosurveillance", "Sécurité", "PostFile", "Confidentialité", "Forces de l'ordre"]
@@ -437,7 +435,7 @@ const competences = {
             { description: "Sécuriser les services et données d'un système", projets: ["chiffrement-s3", "docker-compose"], experiences:["gestion-demandes-utilisateurs", "securite-videosurveillance"] },
             { description: "Créer des processus de traitement automatisé", projets: ["power-apps", "docker-swarm"] },
             { description: "Configurer un serveur et des services réseaux de manière avancée", projets: ["docker-swarm"] },
-            { description: "Appliquer une politique de sécurité au niveau de l'infrastructure", projets: ["docker-swarm"], experiences:["gestion-demandes-utilisateurs", "securite-videosurveillance"] }
+            { description: "Appliquer une politique de sécurité au niveau de l'infrastructure", projets: ["docker-swarm"]}
         ]
     },
     "Gérer des données de l'information": {
