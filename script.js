@@ -1,7 +1,7 @@
 // Données des projets
 const projects = [
     {
-        id: "Supervision",
+        id: "Sauvegarde",
         title: "Projet de Stratégies de Sauvegarde et Reprise d'Activité S5",
         context: "Conception et implémentation d'une politique de sauvegarde multi-niveaux pour assurer la continuité d'activité et la protection des données d'entreprise.",
         description: `
@@ -543,103 +543,122 @@ const competences = {
         items: [
             { description: "Identifier les différents composants d'un système numérique", projets: ["projet-reseau", "projet-intro-systeme"] },
             { description: "Utiliser les fonctionnalités de base d'un système multitâches / multiutilisateurs", projets: ["projet-intro-systeme"] },
-            { description: "Installer et configurer un système d'exploitation et des outils de développement", projets: ["projet-intro-systeme", "docker-compose"] },
+            
+            // Ajout de Powershell-AD et AD (AC13.03)
+            { description: "Installer et configurer un système d'exploitation et des outils de développement", projets: ["projet-intro-systeme", "docker-compose", "Powershell-AD", "AD"] },
+            
             { description: "Configurer un poste de travail dans un réseau d'entreprise", projets: ["projet-reseau", "projet-intro-systeme"], experiences: ["gestion-demandes-utilisateurs"] },
-            { description: "Concevoir et développer des applications communicantes", projets: ["chiffrement-s3", "projet-reseau", "docker-compose"] },
-            { description: "Utiliser des serveurs et des services réseaux virtualisés", projets: ["docker-compose", "docker-swarm"], experiences: ["gestion-demandes-utilisateurs"]},
-            { description: "Sécuriser les services et données d'un système", projets: ["chiffrement-s3", "docker-compose"], experiences:["gestion-demandes-utilisateurs", "securite-videosurveillance"] },
-            { description: "Créer des processus de traitement automatisé", projets: ["power-apps", "docker-swarm"] },
-            { description: "Configurer un serveur et des services réseaux de manière avancée", projets: ["docker-swarm"] },
-            { description: "Appliquer une politique de sécurité au niveau de l'infrastructure", projets: ["docker-swarm"]}
+            
+            // Ajout de Supervision (AC23.01)
+            { description: "Concevoir et développer des applications communicantes", projets: ["chiffrement-s3", "projet-reseau", "docker-compose", "Supervision"] },
+            
+            // Ajout de Sauvegarde, Supervision, Powershell-AD, SIEM (AC23.02)
+            { description: "Utiliser des serveurs et des services réseaux virtualisés", projets: ["docker-compose", "docker-swarm", "Sauvegarde", "Supervision", "Powershell-AD", "SIEM"], experiences: ["gestion-demandes-utilisateurs"]},
+            
+            // Ajout de AD et SIEM (AC23.03)
+            { description: "Sécuriser les services et données d'un système", projets: ["chiffrement-s3", "docker-compose", "AD", "SIEM"], experiences:["gestion-demandes-utilisateurs", "securite-videosurveillance"] },
+            
+            // Ajout de Sauvegarde, Supervision, Powershell-AD (AC33.01)
+            { description: "Créer des processus de traitement automatisé", projets: ["power-apps", "docker-swarm", "Sauvegarde", "Supervision", "Powershell-AD"] },
+            
+            // Ajout de Sauvegarde, Supervision, SIEM (AC33.02)
+            { description: "Configurer un serveur et des services réseaux de manière avancée", projets: ["docker-swarm", "Sauvegarde", "Supervision", "SIEM"] },
+            
+            // Ajout de AD (AC33.03)
+            { description: "Appliquer une politique de sécurité au niveau de l'infrastructure", projets: ["docker-swarm", "AD"]}
         ]
     },
     "Gérer des données de l'information": {
         items: [
-            { description: "Mettre à jour et interroger une base de données relationnelle", projets: ["power-bi", "docker-compose"] },
+            // Ajout de Powershell-AD et SIEM (AC14.01)
+            { description: "Mettre à jour et interroger une base de données relationnelle", projets: ["power-bi", "docker-compose", "Powershell-AD", "SIEM"] },
+            
             { description: "Visualiser des données", projets: ["power-bi"] },
             { description: "Optimiser les modèles de données de l'entreprise", projets: ["power-bi"] },
-            { description: "Assurer la sécurité des données", projets: ["power-apps", "docker-swarm"], experiences: ["securite-videosurveillance"] },
+            
+            // Ajout de Sauvegarde et AD (AC24.02)
+            { description: "Assurer la sécurité des données", projets: ["power-apps", "docker-swarm", "Sauvegarde", "AD"], experiences: ["securite-videosurveillance"] },
+            
             { description: "Organiser la restitution de données à travers la programmation et la visualisation", projets: ["power-bi"] },
             { description: "Manipuler des données hétérogènes", projets: ["power-bi"] }
         ]
     },
     "Conduire un projet": {
         items: [
-            { description: "Appréhender les besoins du client et de l'utilisateur", projets: ["power-apps", "projet-intro-systeme"], experiences: ["gestion-incidents"] }, //good
+            { description: "Appréhender les besoins du client et de l'utilisateur", projets: ["power-apps", "projet-intro-systeme"], experiences: ["gestion-incidents"] }, 
             { description: "Mettre en place les outils de gestion de projet", projets: ["java-s2"] },
             { description: "Identifier les acteurs et les différentes phases d'un cycle de développement", experiences: ["gestion-demandes-utilisateurs"] }
         ]
     },
     "Travailler dans une équipe informatique": {
         items: [
-            { description: "S'intégrer dans un environnement propice au développement et au travail collaboratif", experiences: ["gestion-incidents"] }, //good
-            { description: "Acquérir les compétences interpersonnelles pour travailler en équipe", projets: ["projet-intro-systeme"], experiences: ["gestion-incidents"] }, //good
+            { description: "S'intégrer dans un environnement propice au développement et au travail collaboratif", experiences: ["gestion-incidents"] }, 
+            { description: "Acquérir les compétences interpersonnelles pour travailler en équipe", projets: ["projet-intro-systeme"], experiences: ["gestion-incidents"] }, 
             { description: "Comprendre la diversité, la structure et la dimension de l'informatique dans une organisation", experiences: ["gestion-demandes-utilisateurs"] },
             { description: "Mobiliser les compétences interpersonnelles pour travailler dans une équipe informatique", projets: ["chiffrement-s3", "java-s2", "power-apps", "power-bi", "projet-reseau"] },
             { description: "Rendre compte de son activité professionnelle", projets: ["power-apps"], experiences: ["securite-videosurveillance"] },
-            { description: "Guider la conduite du changement informatique au sein d'une organisation", experiences: ["gestion-incidents"] } //good
+            { description: "Guider la conduite du changement informatique au sein d'une organisation", experiences: ["gestion-incidents"] } 
         ]
     }
 };
-
-
-// Fonction pour afficher les compétences (modifiée pour gérer projets ET expériences)
+// Fonction pour afficher les compétences (Version Catégories conservées)
 function displayCompetences() {
     const container = document.getElementById('competences-container');
+    container.innerHTML = ''; 
     
-    Object.entries(competences).forEach(([competenceTitle, competence]) => {
-        const competenceDiv = document.createElement('div');
-        competenceDiv.className = 'competence-block';
+    // On parcourt chaque catégorie principale
+    Object.entries(competences).forEach(([categoryTitle, categoryContent]) => {
         
-        let itemsHTML = '';
-        competence.items.forEach(item => {
+        // 1. Création du bloc principal de la catégorie
+        const categoryBlock = document.createElement('div');
+        categoryBlock.className = 'competence-category-block';
+        
+        // 2. Le Titre de la catégorie (La "Grande Partie")
+        const h3 = document.createElement('h3');
+        h3.className = 'category-title';
+        h3.textContent = categoryTitle;
+        categoryBlock.appendChild(h3);
+        
+        // 3. La liste des compétences de cette catégorie
+        const ul = document.createElement('ul');
+        ul.className = 'category-list';
+        
+        categoryContent.items.forEach(item => {
+            // Création des liens (projets/expériences)
             let allLinks = [];
             
-            // Gestion des projets
             if (item.projets && item.projets.length > 0) {
                 const projectLinks = item.projets.map(projectId => {
                     const project = projects.find(p => p.id === projectId);
-                    if (project) {
-                        return `<a href="#" class="projet-link" onclick="scrollToProjectAndOpen('${projectId}')">${project.title}</a>`;
-                    }
-                    return '';
+                    return project ? `<a href="#" class="projet-link" onclick="scrollToProjectAndOpen('${projectId}')">${project.title}</a>` : '';
                 }).filter(link => link !== '');
                 allLinks = allLinks.concat(projectLinks);
             }
             
-            // Gestion des expériences
             if (item.experiences && item.experiences.length > 0) {
                 const experienceLinks = item.experiences.map(experienceId => {
                     const experience = experiences.find(e => e.id === experienceId);
-                    if (experience) {
-                        return `<a href="#" class="projet-link" onclick="scrollToExperienceAndOpen('${experienceId}')">${experience.title}</a>`;
-                    }
-                    return '';
+                    return experience ? `<a href="#" class="projet-link" onclick="scrollToExperienceAndOpen('${experienceId}')">${experience.title}</a>` : '';
                 }).filter(link => link !== '');
                 allLinks = allLinks.concat(experienceLinks);
             }
             
             const linksHTML = allLinks.length > 0 ? 
-                `<span class="projet-links">${allLinks.join(' ')}</span>` : 
-                `<span class="projet-placeholder">-- Projets à venir</span>`;
+                `<div class="projet-links">${allLinks.join('')}</div>` : 
+                `<div class="projet-links"><span class="projet-placeholder">-- Projets à venir</span></div>`;
             
-            itemsHTML += `
-                <li class="competence-item">
-                    <span class="competence-description">${item.description}</span>
-                    ${linksHTML}
-                </li>
+            // L'item compétence
+            const li = document.createElement('li');
+            li.className = 'competence-item';
+            li.innerHTML = `
+                <span class="competence-description">${item.description}</span>
+                ${linksHTML}
             `;
+            ul.appendChild(li);
         });
         
-        competenceDiv.innerHTML = `
-            <h3 class="competence-title">${competenceTitle}</h3>
-            <p class="competence-subtitle">Référentiel BUT Informatique</p>
-            <ul class="competence-list">
-                ${itemsHTML}
-            </ul>
-        `;
-        
-        container.appendChild(competenceDiv);
+        categoryBlock.appendChild(ul);
+        container.appendChild(categoryBlock);
     });
 }
 
