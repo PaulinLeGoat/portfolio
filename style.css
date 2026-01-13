@@ -269,48 +269,54 @@ body {
     width: 90%;
     max-width: 800px;
     max-height: 80vh;
-    overflow-y: auto;
+    display: flex;        /* <-- AJOUT */
+    flex-direction: column; /* <-- AJOUT */
     position: relative;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
-
-/* Barre colorée en haut */
-.modal-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+#modal-body, #experience-modal-body {
+    overflow-y: auto; /* Le scroll se fait ici maintenant */
+    padding-right: 15px; /* Espace pour que le texte ne colle pas à la barre */
 }
 
-/* Bouton fermer */
+
+/* Bouton fermer corrigé (Centrage + Position) */
 .close {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    color: #666;
-    font-size: 20px;
-    font-weight: bold;
+    /* On le cale plus proche des bords (plus à droite et plus en haut) */
+    top: 8px;    
+    right: 8px;  
+    
+    /* Taille réduite pour être plus discret */
+    width: 26px;
+    height: 26px;
+    
+    /* Centrage */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Design */
+    background: #f8f9fa;
+    color: #555;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0; /* Un petit bord fin pour la netteté */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: var(--transition);
-    background: #f8f9fa;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: grid;
-    place-items: center;
-    padding: 0;
-    margin: 0;
+    z-index: 50; /* On s'assure qu'il est tout au-dessus */
+    
+    /* La croix plus petite */
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    padding-bottom: 1px; /* Micro-ajustement pour centrer la croix */
 }
 
 .close:hover {
-    background: #e9ecef;
-    color: #333;
-    transform: scale(1.1);
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
 }
 
 /* Titres */
@@ -393,20 +399,26 @@ body {
 }
 
 /* Scrollbar personnalisée */
-#modal-body::-webkit-scrollbar {
+/* Scrollbar personnalisée corrigée */
+#modal-body::-webkit-scrollbar, 
+#experience-modal-body::-webkit-scrollbar {
     width: 8px;
 }
 
-.modal-content::-webkit-scrollbar-track {
+#modal-body::-webkit-scrollbar-track, 
+#experience-modal-body::-webkit-scrollbar-track {
     background: var(--bg-light);
+    border-radius: 4px;
 }
 
-.modal-content::-webkit-scrollbar-thumb {
+#modal-body::-webkit-scrollbar-thumb, 
+#experience-modal-body::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 4px;
 }
 
-.modal-content::-webkit-scrollbar-thumb:hover {
+#modal-body::-webkit-scrollbar-thumb:hover, 
+#experience-modal-body::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
 }
 
