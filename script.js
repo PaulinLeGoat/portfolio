@@ -1,6 +1,121 @@
 // Données des projets
 const projects = [
     {
+        id: "Supervision",
+        title: "Projet de Stratégies de Sauvegarde et Reprise d'Activité S5",
+        context: "Conception et implémentation d'une politique de sauvegarde multi-niveaux pour assurer la continuité d'activité et la protection des données d'entreprise.",
+        description: `
+            <h3>Projet Backup & Disaster Recovery - Windows et Veeam</h3>
+            <p><strong>Contexte</strong> Conception et implémentation d'une politique de sauvegarde multi-niveaux pour assurer la continuité d'activité et la protection des données d'entreprise.</p>
+            
+            <h4>Description</h4>
+            <p>J'ai élaboré une stratégie de sauvegarde 3-2-1 en utilisant plusieurs technologies. J'ai d'abord développé des scripts Batch automatisés pour gérer des cycles de sauvegardes (Quotidien, Hebdomadaire, Mensuel) avec rétention et purge automatique vers un NAS via le réseau.</p>
+            
+            <p>Ensuite, j'ai intégré un stockage iSCSI sur un NAS TrueNAS connecté à un serveur Windows pour utiliser la fonctionnalité "Windows Server Backup". Enfin, j'ai déployé Veeam Backup & Replication pour gérer la sauvegarde de machines virtuelles (Hyper-V/VMware). J'ai configuré des jobs avec la méthode GFS (Grandfather-Father-Son), testé la restauration granulaire de fichiers ainsi que la restauration complète de VMs (Bare Metal) pour valider le plan de reprise d'activité (PRA).</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC24.02 | Assurer la sécurité des données - Implémentation de stratégies de sauvegarde et rétention des données</li>
+                <li>AC33.01 | Créer des processus de traitement automatisé - Scripting des tâches planifiées de sauvegarde et purge</li>
+                <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Sauvegarde et restauration de machines virtuelles avec Veeam</li>
+                <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Configuration de cibles iSCSI et intégration NAS</li>
+            </ul>
+        `,
+        tags: ["Veeam", "Windows Server", "TrueNAS", "iSCSI", "Scripting Batch", "PRA", "Sauvegarde"]
+    },
+    {
+        id: "Supervision",
+        title: "Projet Supervision d’Infrastructures S5",
+        context: "Mise en œuvre d'une solution de supervision hybride pour monitorer à la fois des équipements réseaux, des serveurs Linux et des conteneurs applicatifs.",
+        description: `
+            <h3>Projet Monitoring - De SNMP à Prometheus/Grafana</h3>
+            <p><strong>Contexte</strong> Mise en œuvre d'une solution de supervision hybride pour monitorer à la fois des équipements réseaux, des serveurs Linux et des conteneurs applicatifs.</p>
+            
+            <h4>Description</h4>
+            <p>J'ai mis en place une architecture de supervision complète. D'une part, j'ai configuré le protocole SNMP (v2/v3) sur des serveurs Linux et commutateurs Cisco pour remonter les métriques systèmes et réseaux via l'analyse des MIBs. D'autre part, j'ai déployé une stack moderne composée de Prometheus et Grafana.</p>
+            
+            <p>J'ai configuré des "exporters" spécifiques : Node Exporter pour les métriques serveurs, cAdvisor pour la surveillance de la consommation des ressources des conteneurs Docker, et Blackbox Exporter pour le monitoring de disponibilité des services Web (HTTP/DNS). J'ai conçu des tableaux de bord (Dashboards) Grafana personnalisés pour visualiser l'état de santé de l'infrastructure et configuré des alertes par mail en cas d'incident critique.</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC23.01 | Concevoir et développer des applications communicantes - Configuration des agents SNMP et des scrapers Prometheus</li>
+                <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Mise en place de la stack de monitoring Prometheus/Grafana</li>
+                <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Supervision des conteneurs Docker via cAdvisor</li>
+                <li>AC33.01 | Créer des processus de traitement automatisé - Configuration des règles d'alerting automatique</li>
+            </ul>
+        `,
+        tags: ["Prometheus", "Grafana", "SNMP", "Docker", "cAdvisor", "Supervision", "Linux"]
+    },
+    {
+        id: "Powershell-AD",
+        title: "Projet Automatisation PowerShell pour Active Directory S5",
+        context: "Développement de scripts pour automatiser la gestion du cycle de vie des utilisateurs et l'administration massive de l'Active Directory.",
+        description: `
+            <h3>Projet PowerShell - Scripting et Automatisation Administrative</h3>
+            <p><strong>Contexte</strong> Développement de scripts pour automatiser la gestion du cycle de vie des utilisateurs et l'administration massive de l'Active Directory.</p>
+            
+            <h4>Description</h4>
+            <p>Pour optimiser les tâches d'administration répétitives, j'ai développé une suite d'outils en PowerShell modulaire. J'ai créé des scripts capables d'importer des utilisateurs en masse depuis des fichiers CSV et JSON, générant automatiquement les attributs (SAMAccountName, Emails) et des mots de passe complexes via SecureString.</p>
+            
+            <p>Le projet incluait la gestion à distance via RSAT et WinRM (Enter-PSSession). J'ai structuré le code avec des fonctions personnalisées pour la création d'utilisateurs, l'assignation automatique aux Unités d'Organisation (UO) et l'activation des comptes. J'ai également manipulé les objets AD pour des modifications d'attributs en masse et la gestion des groupes, garantissant une standardisation des données de l'annuaire.</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC33.01 | Créer des processus de traitement automatisé - Développement de scripts PowerShell pour l'import massif de données</li>
+                <li>AC14.01 | Mettre à jour et interroger une base de données relationnelle - Manipulation des objets et attributs de la base Active Directory</li>
+                <li>AC13.03 | Installer et configurer un système d'exploitation et des outils de développement - Configuration de l'environnement de scripting et RSAT</li>
+                <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Administration à distance via WinRM et sessions PowerShell</li>
+            </ul>
+        `,
+        tags: ["PowerShell", "Scripting", "Automatisation", "Active Directory", "RSAT", "CSV/JSON"]
+    },
+    {
+        id: "AD",
+        title: "Projet Administration et Sécurisation Active Directory S5",
+        context: "Gestion avancée d'un domaine Active Directory incluant l'automatisation des politiques de groupe et l'audit de sécurité de l'annuaire.",
+        description: `
+            <h3>Projet Windows Server - Administration et Durcissement AD</h3>
+            <p><strong>Contexte</strong> Gestion avancée d'un domaine Active Directory d'entreprise incluant l'automatisation des politiques de groupe et l'audit de sécurité de l'annuaire.</p>
+            
+            <h4>Description</h4>
+            <p>Dans un environnement Windows Server, j'ai structuré un annuaire Active Directory complet (Utilisateurs, Groupes, UO) reflétant l'organigramme d'une entreprise (Direction, IT, Production, etc.). J'ai implémenté une stratégie de GPO (Group Policy Objects) fine : déploiement ciblé de logiciels (Notepad++, 7zip), restriction d'accès aux paramètres systèmes, gestion des fonds d'écran par service et verrouillage de comptes après échecs d'authentification.</p>
+            
+            <p>J'ai également sécurisé l'architecture en gérant les ACLs sur les partages réseaux et en auditant l'AD avec l'outil PingCastle. Suite à l'analyse du rapport de vulnérabilité, j'ai appliqué des correctifs pour réduire la surface d'attaque et durcir la configuration du contrôleur de domaine.</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC13.03 | Installer et configurer un système d'exploitation et des outils de développement - Installation du rôle AD DS et configuration du contrôleur de domaine</li>
+                <li>AC33.03 | Appliquer une politique de sécurité au niveau de l'infrastructure - Déploiement de GPO de sécurité et restriction des droits utilisateurs</li>
+                <li>AC23.03 | Sécuriser les services et données d'un système - Audit de vulnérabilité avec PingCastle et remédiation</li>
+                <li>AC24.02 | Assurer la sécurité des données - Gestion des permissions NTFS et partage réseau par groupes de sécurité</li>
+            </ul>
+        `,
+        tags: ["Windows Server", "Active Directory", "GPO", "PingCastle", "Audit", "Sécurité", "Administration"]
+    },
+    {
+        id: "SIEM",
+        title: "Projet Déploiement d'un SIEM S5",
+        context: "Mise en place d'une infrastructure de cybersécurité centralisée pour la détection, l'analyse et la gestion des incidents de sécurité au sein d'un système d'information.",
+        description: `
+            <h3>Projet SIEM - Surveillance et Analyse de Sécurité</h3>
+            <p><strong>Contexte</strong> Mise en place d'une infrastructure de cybersécurité centralisée pour la détection, l'analyse et la gestion des incidents de sécurité au sein d'un système d'information.</p>
+            
+            <h4>Description</h4>
+            <p>J'ai déployé une solution SIEM (Security Information and Event Management) complète en interconnectant plusieurs outils open-source spécialisés. L'architecture repose sur la collecte de logs via Suricata (IDS) et leur centralisation dans OpenSearch pour l'indexation et le tri des données.</p>
+            
+            <p>J'ai intégré MISP pour la gestion de la "Threat Intelligence" afin d'enrichir l'analyse des menaces, et Zammad couplé à Elasticsearch pour la gestion des tickets d'incidents. L'ensemble permet une visualisation en temps réel des alertes et une réactivité accrue face aux menaces réseaux. J'ai configuré les flux de données entre ces différents composants pour assurer une chaîne de traitement cohérente, de la détection à la remédiation.</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Déploiement et interconnexion des briques logicielles du SIEM</li>
+                <li>AC23.03 | Sécuriser les services et données d'un système - Configuration de sondes IDS et centralisation des logs de sécurité</li>
+                <li>AC14.01 | Mettre à jour et interroger une base de données relationnelle - Gestion des index OpenSearch et Elasticsearch pour le tri des données</li>
+                <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Orchestration des flux entre MISP, Suricata et le dashboard de visualisation</li>
+            </ul>
+        `,
+        tags: ["SIEM", "Suricata", "OpenSearch", "MISP", "Elasticsearch", "Cybersécurité", "Threat Intel"]
+    },
+    {
         id: "docker-compose",
         title: "Projet Docker-compose - Stack Web S4",
         context: "Mise en œuvre d'un environnement de développement web conteneurisé pour faciliter le déploiement d'applications web avec base de données.",
