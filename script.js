@@ -1,6 +1,85 @@
 // Données des projets
 const projects = [
     {
+        id: "PRA_PCA",
+        title: "Conception de l'architecture de résilience IT (PCA/PRA) S6",
+        context: "Élaboration d'un Plan de Continuité et de Reprise d'Activité pour garantir la résilience du système d'information de Roiret Transport face aux sinistres et cyberattaques.",
+        description: `
+            <h3>Plan de Continuité et de Reprise d'Activité - Roiret Transport</h3>
+            <p><strong>Contexte</strong> Élaboration d'un Plan de Continuité et de Reprise d'Activité pour garantir la résilience du système d'information du Bureau d'Études de Roiret Transport face aux sinistres et cyberattaques.</p>
+            
+            <h4>Description</h4>
+            <p>Dans le cadre de ce projet, j'ai corédigé le référentiel unique de résilience pour le système d'information interne de la filiale Roiret Transport. J'ai d'abord cartographié les menaces via la méthodologie EBIOS RM (incendie, ransomware, rupture de communication) et défini les objectifs de temps de reprise (RTO/RPO) au travers de l'Analyse d'Impact sur l'Activité (BIA).</p>
+            
+            <p>Sur le plan technique, la stratégie de reprise (PRA) repose sur une architecture à trois niveaux : une couche réseau redondée via HSRP sur des équipements Cisco, un cluster de virtualisation Proxmox VE en haute disponibilité (HA), et un stockage centralisé NetApp. J'ai également documenté une politique de sauvegarde 3-2-1 incluant des snapshots locaux et une externalisation chiffrée vers un Proxmox Backup Server. Enfin, pour le volet PCA, un accès distant sécurisé (VPN Zscaler) et un site de repli ont été planifiés pour maintenir le métier en mode dégradé.</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC24.01 | Analyser les risques et les menaces - Cartographie des risques avec la méthode EBIOS RM.</li>
+                <li>AC24.02 | Assurer la sécurité des données - Définition de la stratégie de sauvegarde 3-2-1 et externalisation chiffrée.</li>
+                <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Déploiement théorique d'un cluster Proxmox VE HA et reprise après sinistre.</li>
+                <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Configuration de la redondance réseau et routage HSRP (Cisco).</li>
+            </ul>
+        `,
+        tags: ["PRA", "PCA", "Proxmox", "Cisco", "EBIOS RM", "Cybersécurité", "Continuité d'activité"],
+        proofs: [
+            { title: "Support de Soutenance", url: "./preuves/pra-pca/support_soutenance.pdf" },
+            { title: "Dossier PRA/PCA Roiret Transport", url: "./preuves/pra-pca/PRA_PCA Roiret Transport.pdf" }
+        ]
+    },
+    {
+        id: "Redondance_Services",
+        title: "Déploiement d'une Architecture Web 4 Tiers à Haute Disponibilité S6",
+        context: "Mise en place d'une infrastructure web flexible et tolérante aux pannes (Reverse Proxy, Web, BDD) avec mécanismes de redondance et de répartition de charge.",
+        description: `
+            <h3>Architecture Haute Disponibilité (HA) - Nginx, WordPress et MariaDB</h3>
+            <p><strong>Contexte</strong> Mise en place d'une infrastructure web flexible et tolérante aux pannes (Reverse Proxy, Web, BDD) avec mécanismes de redondance et de répartition de charge.</p>
+            
+            <h4>Description</h4>
+            <p>Ce projet technique visait à transformer une architecture web initiale en une infrastructure hautement disponible en doublant les composants critiques. J'ai configuré un Reverse Proxy Nginx intégrant un Load Balancer (avec les méthodes Round Robin et IP Hash) pour distribuer le trafic entrant HTTP/HTTPS vers deux serveurs applicatifs WordPress synchronisés.</p>
+            
+            <p>Pour garantir une tolérance aux pannes maximale, j'ai déployé des adresses IP virtuelles (VIP) flottantes gérées par le démon Keepalived via le protocole VRRP. Ce mécanisme permet une bascule transparente vers un nœud de secours en cas de défaillance matérielle. L'intégrité des données est quant à elle assurée par une réplication de type Maître-Maître sur la base de données MariaDB, couplée à une synchronisation bidirectionnelle des fichiers médias via l'outil Unison et des tâches Cron.</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Mise en place de Reverse Proxy, de Load Balancing Nginx et d'IP Virtuelles (VRRP/Keepalived).</li>
+                <li>AC24.02 | Assurer la sécurité des données - Implémentation d'une réplication bidirectionnelle des bases de données MariaDB.</li>
+                <li>AC23.01 | Administrer des systèmes informatiques - Automatisation de la synchronisation de fichiers via Unison, configuration SSH et certificats SSL auto-signés.</li>
+                <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Déploiement de clones pour éliminer les Single Points of Failure (SPOF).</li>
+            </ul>
+        `,
+        tags: ["Haute Disponibilité", "Nginx", "MariaDB", "Keepalived", "Unison", "Load Balancing", "WordPress"],
+        proofs: [
+            { title: "Documentation d'Installation HA", url: "./preuves/haute dispo/Documentation dInstallation _ Architecture Web 4 Tiers (WordPress).pdf" }
+        ]
+    },
+    {
+        id: "Entreprenariat_BeParty",
+        title: "Projet Entrepreneuriat : Application Be PARTY S6",
+        context: "Création d'un business plan complet pour le lancement d'une solution numérique innovante centralisant et digitalisant le marché de l'événementiel.",
+        description: `
+            <h3>Be PARTY - Plateforme SaaS et Marketplace Événementielle</h3>
+            <p><strong>Contexte</strong> Création d'un business plan complet pour le lancement d'une solution numérique innovante centralisant et digitalisant le marché de l'événementiel.</p>
+            
+            <h4>Description</h4>
+            <p>J'ai coréalisé l'étude et le business plan de "Be PARTY", un écosystème hybride servant de tiers de confiance dans le domaine événementiel. La solution se compose d'une application B2C gratuite pour les particuliers, et d'un tableau de bord web SaaS sous abonnement pour les professionnels. Le service innove par l'intégration d'une Intelligence Artificielle effectuant du "Matchmaking" prédictif pour recommander les bons prestataires, le tout accompagné par une mascotte virtuelle rassurante nommée Feur.</p>
+            
+            <p>Au sein de ce projet, outre la modélisation financière du budget initial de 50 000 € et la structuration du modèle économique par commissions et abonnements, j'ai eu la charge de concevoir la stratégie d'infrastructure technique. J'ai supervisé la planification de l'administration système ainsi que la gestion des identités et des accès (IAM) pour garantir une architecture SaaS extrêmement robuste et conforme au RGPD lors du traitement des données.</p>
+            
+            <h4>Compétences développées</h4>
+            <ul>
+                <li>AC31.02 | Gérer un projet informatique - Élaboration des prévisions financières, du seuil de rentabilité et du Business Plan.</li>
+                <li>AC21.01 | Gérer les exigences et les besoins - Étude de marché (concurrentielle et cible B2C/B2B) et définition du Mix Marketing (4P).</li>
+                <li>AC34.02 | Mettre en œuvre une politique de sécurité - Planification de l'infrastructure IAM et de la sécurité des données utilisateurs de la plateforme SaaS.</li>
+                <li>AC24.01 | Analyser les risques et les menaces - Modélisation des risques financiers et concurrentiels et élaboration de plans de contingence.</li>
+            </ul>
+        `,
+        tags: ["Entrepreneuriat", "Business Plan", "SaaS", "Marketplace", "IAM", "Gestion de Projet"],
+        proofs: [
+            { title: "Rapport d'Entrepreneuriat Be PARTY", url: "./preuves/entreprenariat/Rapport_BEParty.pdf" }
+        ]
+    },
+    {
         id: "Sauvegarde",
         title: "Projet de Stratégies de Sauvegarde et Reprise d'Activité S5",
         context: "Conception et implémentation d'une politique de sauvegarde multi-niveaux pour assurer la continuité d'activité et la protection des données d'entreprise.",
@@ -21,7 +100,10 @@ const projects = [
                 <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Configuration de cibles iSCSI et intégration NAS</li>
             </ul>
         `,
-        tags: ["Veeam", "Windows Server", "TrueNAS", "iSCSI", "Scripting Batch", "PRA", "Sauvegarde"]
+        tags: ["Veeam", "Windows Server", "TrueNAS", "iSCSI", "Scripting Batch", "PRA", "Sauvegarde"],
+        proofs: [
+            { title: "Configuration TrueNAS", url: "./preuves/sauvegarde/TrueNAS.pdf" }
+        ]
     },
     {
         id: "Supervision",
@@ -44,7 +126,10 @@ const projects = [
                 <li>AC33.01 | Créer des processus de traitement automatisé - Configuration des règles d'alerting automatique</li>
             </ul>
         `,
-        tags: ["Prometheus", "Grafana", "SNMP", "Docker", "cAdvisor", "Supervision", "Linux"]
+        tags: ["Prometheus", "Grafana", "SNMP", "Docker", "cAdvisor", "Supervision", "Linux"],
+        proofs: [
+            { title: "Rapport Grafana", url: "./preuves/monitoring/RapportGrafana.pdf" }
+        ]
     },
     {
         id: "Powershell-AD",
@@ -67,7 +152,10 @@ const projects = [
                 <li>AC23.02 | Utiliser des serveurs et des services réseaux virtualisés - Administration à distance via WinRM et sessions PowerShell</li>
             </ul>
         `,
-        tags: ["PowerShell", "Scripting", "Automatisation", "Active Directory", "RSAT", "CSV/JSON"]
+        tags: ["PowerShell", "Scripting", "Automatisation", "Active Directory", "RSAT", "CSV/JSON"],
+        proofs: [
+            { title: "Scripts PowerShell", url: "./preuves/powershell/PowerShell.pdf" }
+        ]
     },
     {
         id: "AD",
@@ -90,7 +178,10 @@ const projects = [
                 <li>AC24.02 | Assurer la sécurité des données - Gestion des permissions NTFS et partage réseau par groupes de sécurité</li>
             </ul>
         `,
-        tags: ["Windows Server", "Active Directory", "GPO", "PingCastle", "Audit", "Sécurité", "Administration"]
+        tags: ["Windows Server", "Active Directory", "GPO", "PingCastle", "Audit", "Sécurité", "Administration"],
+        proofs: [
+            { title: "Rapport Active Directory", url: "./preuves/ad/ADrapport.pdf" }
+        ]
     },
     {
         id: "SIEM",
@@ -113,7 +204,10 @@ const projects = [
                 <li>AC33.02 | Configurer un serveur et des services réseaux de manière avancée - Orchestration des flux entre MISP, Suricata et le dashboard de visualisation</li>
             </ul>
         `,
-        tags: ["SIEM", "Suricata", "OpenSearch", "MISP", "Elasticsearch", "Cybersécurité", "Threat Intel"]
+        tags: ["SIEM", "Suricata", "OpenSearch", "MISP", "Elasticsearch", "Cybersécurité", "Threat Intel"],
+        proofs: [
+            { title: "Support de Présentation", url: "./preuves/minisoc/minisocdiapo.pdf" }
+        ]
     },
     {
         id: "docker-compose",
@@ -139,7 +233,10 @@ const projects = [
                 <li>AC23.03 | Sécuriser les services et données d'un système - Isolation des services dans des conteneurs distincts</li>
             </ul>
         `,
-        tags: ["DockerFile", "Docker-compose", "Apache", "MySQL", "phpMyAdmin", "Conteneurs"]
+        tags: ["DockerFile", "Docker-compose", "Apache", "MySQL", "phpMyAdmin", "Conteneurs"],
+        proofs: [
+            { title: "Documentation (README)", url: "./preuves/dockerS4/readme.pdf" }
+        ]
     },
     {
         id: "docker-swarm",
@@ -165,7 +262,11 @@ const projects = [
                 <li>AC33.03 | Appliquer une politique de sécurité au niveau de l'infrastructure - Isolation des services via des réseaux complexe</li>
             </ul>
         `,
-        tags: ["Docker Swarm", "Portainer", "Traefik", "WordPress", "Haute disponibilité", "Load balancer"]
+        tags: ["Docker Swarm", "Portainer", "Traefik", "WordPress", "Haute disponibilité", "Load balancer"],
+        proofs: [
+            { title: "Configuration de l'Architecture", url: "./preuves/dockerswarm/SAES4conf.pdf" },
+            { title: "Procédure de Résolution de Problèmes", url: "./preuves/dockerswarm/SAES4procedureProbleme.pdf" }
+        ]
     },
     {
         id: "power-apps",
@@ -438,7 +539,32 @@ function openModal(project) {
     const modal = document.getElementById('project-modal');
     const modalBody = document.getElementById('modal-body');
     
-    modalBody.innerHTML = project.description;
+    // Génération dynamique des preuves (optionnelles)
+    let proofsHTML = '';
+    if (project.proofs && project.proofs.length > 0) {
+        const linksHTML = project.proofs.map(proof => `
+            <a href="${proof.url}" class="proof-link" target="_blank">
+                <!-- Icône SVG Dossier/Fichier -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                ${proof.title}
+            </a>
+        `).join('');
+
+        proofsHTML = `
+            <div class="project-proofs">
+                <h4>📁 Preuves de réalisation</h4>
+                <div class="proof-links">
+                    ${linksHTML}
+                </div>
+            </div>
+        `;
+    }
+    
+    // Concaténation de la description et des preuves
+    modalBody.innerHTML = project.description + proofsHTML;
     modal.style.display = 'block';
 
     document.querySelector('.close').onclick = closeModal;
@@ -486,6 +612,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayProjects();
     displayCompetences();
     displayExperiences();
+    displayNiveaux(); // <--- L'appel pour afficher les jauges est bien ici
     smoothScroll();
     navbarScrollEffect();
     
@@ -529,7 +656,8 @@ const competences = {
             { description: "Développer des interfaces utilisateurs", projets: ["java-s2"] },
             { description: "Appliquer des principes d'accessibilité et d'ergonomie", projets: ["java-s2"] },
             { description: "Adopter de bonnes pratiques de conception et de programmation", projets: ["power-apps"] },
-            { description: "Faire évoluer une application existante", projets: ["power-apps"] }
+            { description: "Faire évoluer une application existante", projets: ["power-apps"] },
+            { description: "Gérer les exigences et les besoins", projets: ["Entreprenariat_BeParty"] }
         ]
     },
     "Optimiser des applications informatiques": {
@@ -543,51 +671,35 @@ const competences = {
         items: [
             { description: "Identifier les différents composants d'un système numérique", projets: ["projet-reseau", "projet-intro-systeme"] },
             { description: "Utiliser les fonctionnalités de base d'un système multitâches / multiutilisateurs", projets: ["projet-intro-systeme"] },
-            
-            // Ajout de Powershell-AD et AD (AC13.03)
             { description: "Installer et configurer un système d'exploitation et des outils de développement", projets: ["projet-intro-systeme", "docker-compose", "Powershell-AD", "AD"] },
-            
             { description: "Configurer un poste de travail dans un réseau d'entreprise", projets: ["projet-reseau", "projet-intro-systeme"], experiences: ["gestion-demandes-utilisateurs"] },
-            
-            // Ajout de Supervision (AC23.01)
             { description: "Concevoir et développer des applications communicantes", projets: ["chiffrement-s3", "projet-reseau", "docker-compose", "Supervision"] },
-            
-            // Ajout de Sauvegarde, Supervision, Powershell-AD, SIEM (AC23.02)
-            { description: "Utiliser des serveurs et des services réseaux virtualisés", projets: ["docker-compose", "docker-swarm", "Sauvegarde", "Supervision", "Powershell-AD", "SIEM"], experiences: ["gestion-demandes-utilisateurs"]},
-            
-            // Ajout de AD et SIEM (AC23.03)
-            { description: "Sécuriser les services et données d'un système", projets: ["chiffrement-s3", "docker-compose", "AD", "SIEM"], experiences:["gestion-demandes-utilisateurs", "securite-videosurveillance"] },
-            
-            // Ajout de Sauvegarde, Supervision, Powershell-AD (AC33.01)
+            { description: "Administrer des systèmes informatiques", projets: ["Redondance_Services"] },
+            { description: "Utiliser des serveurs et des services réseaux virtualisés", projets: ["docker-compose", "docker-swarm", "Sauvegarde", "Supervision", "Powershell-AD", "SIEM", "PRA_PCA", "Redondance_Services"], experiences: ["gestion-demandes-utilisateurs"] },
+            { description: "Sécuriser les services et données d'un système", projets: ["chiffrement-s3", "docker-compose", "AD", "SIEM"], experiences: ["gestion-demandes-utilisateurs", "securite-videosurveillance"] },
             { description: "Créer des processus de traitement automatisé", projets: ["power-apps", "docker-swarm", "Sauvegarde", "Supervision", "Powershell-AD"] },
-            
-            // Ajout de Sauvegarde, Supervision, SIEM (AC33.02)
-            { description: "Configurer un serveur et des services réseaux de manière avancée", projets: ["docker-swarm", "Sauvegarde", "Supervision", "SIEM"] },
-            
-            // Ajout de AD (AC33.03)
-            { description: "Appliquer une politique de sécurité au niveau de l'infrastructure", projets: ["docker-swarm", "AD"]}
+            { description: "Configurer un serveur et des services réseaux de manière avancée", projets: ["docker-swarm", "Sauvegarde", "Supervision", "SIEM", "PRA_PCA", "Redondance_Services"] },
+            { description: "Appliquer une politique de sécurité au niveau de l'infrastructure", projets: ["docker-swarm", "AD"] },
+            { description: "Mettre en œuvre une politique de sécurité", projets: ["Entreprenariat_BeParty"] }
         ]
     },
     "Gérer des données de l'information": {
         items: [
-            // Ajout de Powershell-AD et SIEM (AC14.01)
             { description: "Mettre à jour et interroger une base de données relationnelle", projets: ["power-bi", "docker-compose", "Powershell-AD", "SIEM"] },
-            
             { description: "Visualiser des données", projets: ["power-bi"] },
             { description: "Optimiser les modèles de données de l'entreprise", projets: ["power-bi"] },
-            
-            // Ajout de Sauvegarde et AD (AC24.02)
-            { description: "Assurer la sécurité des données", projets: ["power-apps", "docker-swarm", "Sauvegarde", "AD"], experiences: ["securite-videosurveillance"] },
-            
+            { description: "Assurer la sécurité des données", projets: ["power-apps", "docker-swarm", "Sauvegarde", "AD", "PRA_PCA", "Redondance_Services"], experiences: ["securite-videosurveillance"] },
             { description: "Organiser la restitution de données à travers la programmation et la visualisation", projets: ["power-bi"] },
-            { description: "Manipuler des données hétérogènes", projets: ["power-bi"] }
+            { description: "Manipuler des données hétérogènes", projets: ["power-bi"] },
+            { description: "Analyser les risques et les menaces", projets: ["PRA_PCA", "Entreprenariat_BeParty"] }
         ]
     },
     "Conduire un projet": {
         items: [
             { description: "Appréhender les besoins du client et de l'utilisateur", projets: ["power-apps", "projet-intro-systeme"], experiences: ["gestion-incidents"] }, 
             { description: "Mettre en place les outils de gestion de projet", projets: ["java-s2"] },
-            { description: "Identifier les acteurs et les différentes phases d'un cycle de développement", experiences: ["gestion-demandes-utilisateurs"] }
+            { description: "Identifier les acteurs et les différentes phases d'un cycle de développement", experiences: ["gestion-demandes-utilisateurs"] },
+            { description: "Gérer un projet informatique", projets: ["Entreprenariat_BeParty"] }
         ]
     },
     "Travailler dans une équipe informatique": {
@@ -738,6 +850,74 @@ function scrollToExperienceAndOpen(experienceId) {
         console.log("ERREUR: Expérience non trouvée!");
     }
 }
+// Données des niveaux d'outils (Tirées de votre CV)
+const outilsNiveaux = {
+    "Systèmes & Virtualisation": [
+        { name: "Windows (Server, AD)", level: 90 },
+        { name: "Linux (Debian, Ubuntu)", level: 85 },
+        { name: "Docker & Docker Swarm", level: 85 },
+        { name: "Proxmox", level: 75 }
+    ],
+    "Réseaux & Sécurité": [
+        { name: "TCP/IP, Routage, VLANs", level: 80 },
+        { name: "Wireshark, Nmap", level: 75 },
+        { name: "SIEM (Suricata, OpenSearch)", level: 70 }
+    ],
+    "Scripting & Programmation": [
+        { name: "PowerShell", level: 85 },
+        { name: "Python", level: 75 },
+        { name: "Bash", level: 70 },
+        { name: "SQL", level: 65 }
+    ]
+};
+
+// Fonction pour afficher les jauges
+function displayNiveaux() {
+    const container = document.getElementById('niveaux-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    Object.entries(outilsNiveaux).forEach(([category, tools]) => {
+        const block = document.createElement('div');
+        block.className = 'niveau-category';
+
+        const title = document.createElement('h3');
+        title.textContent = category;
+        block.appendChild(title);
+
+        tools.forEach(tool => {
+            const item = document.createElement('div');
+            item.className = 'niveau-item';
+            item.innerHTML = `
+                <div class="niveau-info">
+                    <span>${tool.name}</span>
+                    <span>${tool.level}%</span>
+                </div>
+                <div class="niveau-bar">
+                    <div class="niveau-progress" data-target="${tool.level}%"></div>
+                </div>
+            `;
+            block.appendChild(item);
+        });
+
+        container.appendChild(block);
+    });
+
+    // Animation au chargement/scroll
+    setTimeout(() => {
+        document.querySelectorAll('.niveau-progress').forEach(bar => {
+            bar.style.width = bar.getAttribute('data-target');
+        });
+    }, 500);
+}
+
+// Assurez-vous d'ajouter displayNiveaux() dans votre DOMContentLoaded existant :
+// document.addEventListener('DOMContentLoaded', function() {
+//     displayProjects();
+//     displayCompetences();
+//     displayExperiences();
+//     displayNiveaux(); // <--- AJOUTEZ CETTE LIGNE ICI
+//     ...
 
 
 
